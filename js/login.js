@@ -20,13 +20,14 @@ class Login{
 		//post请求必须是以form data形式传参
 		let data=`username=${username}&password=${password}`;
 		axios.post('http://localhost:8888/users/login',data).then(res=>{
-			// console.log(data);
+			
 			let{status,data}=res;
 			if(status==200){
+				console.log(data);
 				localStorage.setItem('token',data.token)
-				localStorage.setItem('token',data.user.id)
+				localStorage.setItem('user_id',data.user.id)
 				//从哪里来,跳转都哪里去
-				location.assign(location.search.split('=')[1])
+			 location.assign(location.search.split('=')[1])
 			}
 		})
 	}

@@ -3286,9 +3286,9 @@
 				<div class="hd_countdown">
 					<strong>14:00</strong>点场 倒计时
 					<div class="timer">
-						<span class="hour">1</span>
-						<span class="minute">2</span>
-						<span class="second">3</span>
+						<span class="hour"> <input type="text" id="hou" value="2"></span>
+						<span class="minute"><input type="text" id="min" value="0"></span>
+						<span class="second"><input type="text" id="sec" value="0"></span>
 					</div>
 				</div>
 			</div>
@@ -3672,6 +3672,7 @@
 				<li><a href="#"><img src="uploads/nav-4.png" width="100%" alt=""></a></li>
 			</ul>
 		</div>
+		<!-- 轮播图 -->
 		<script src="./swiper/swiper-bundle.min.js"></script>
 		<script>        
 			var mySwiper = new Swiper ('.swiper', {
@@ -3694,6 +3695,51 @@
 				el: '.swiper-scrollbar',
 			  },
 			})        
+			</script>
+			<!-- 倒计时 -->
+			   <script>
+				//获取节点
+				var hou = document.querySelector('#hou');
+				var min = document.querySelector('#min');
+				var sec = document.querySelector('#sec');
+				// console.log(min.value)
+				// var sum = hou.value*3600 + min.value*60 + +sec.value;//注意sec.value 是字符串
+				var num = 0;
+					/*给按钮绑定事件*/
+				setTimeout(
+					function daojishi(){
+					//点击开始获取  获取的值  
+					clearInterval(times);
+					num++;
+					var sum = hou.value*3600 + min.value*60 + +sec.value;//转换为秒数
+					// var initNum = sum;//保存初始值
+					
+					var priHou = +hou.value;
+					var priMin = +min.value;
+					var priSec = +sec.value;
+					var times;//变化后的时间
+					// console.log(sum);
+		
+					/*开启定时器*/
+					var times = setInterval(() => {
+						sum--;//时间减1、
+						//设置到 #box 中
+						hou.value = parseInt(sum/3600);
+						min.value = parseInt(sum%3600 /60);
+						sec.value = sum%3600%60;
+		
+						// 当数字 为0 清除定时器，且设置数字为初始值
+						if(+sec.value< 0){
+							clearInterval(times);
+							// .innerHTML = initNum;
+							hou.value = priHou;
+							min.value = priMin;
+							sec.value = priSec;
+						}
+					}, 1000);
+				}
+				)
+				
 			</script>
 	</body>
 </html>

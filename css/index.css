@@ -1,3 +1,7 @@
+#hou,#min,#sec{
+	background-color: rgba(0, 0, 0, 0);
+}
+
 .swiper-wrapper img{
 	height: 100%;
 	width: 100%;
@@ -423,7 +427,7 @@
 }
 .timer span {
 	display: inline-block;
-	background-color: #2f3430;
+	/* background-color: #2f3430; */
 	width: 30px;
 	height: 30px;
 	line-height: 30px;

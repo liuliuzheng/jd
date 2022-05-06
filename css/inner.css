@@ -1,0 +1,89 @@
+*{margin:0;padding:0;list-style:none;text-decoration:none;}
+a{color:#666;} 
+a:hover{color:red;}
+body{font: 12px/150% Arial,Verdana,"\5b8b\4f53";color: #666;}
+h1,h2,h3,h4,h5{font-weight: normal; }
+img{border:none;} 
+em,i{    font-style: normal;}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+/*轮播图左边当行蓝*/
+.dd-inner{
+	height:451px;
+	background:rgba(0,0,0,0.5);
+	width:240px;/* margin-top:5px;*/
+	margin-left:0px; position: relative; z-index: 2;  
+	zoom: 1;
+}
+.dd-inner .item{height:64.4px;color:#fff;line-height:31px; position:relative; z-index: 100; background:rgba(0,0,0,0.4); ;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5F000000,endColorstr=#5F000000);
+ 
+}
+.dd-inner .item h3{font-family: "microsoft yahei";font-size:14px;font-weight:400;line-height:35px;position: absolute;left:11px; top: 5px;}
+.dd-inner .item h3 p{line-height: 15px;}
+.dd-inner .item h3 p a{float: left; margin-right: 15px; color: #bababa; line-height: 15px;}
+.dd-inner .item a{color:#fff;}
+.dd-inner .item .da_zhu{font-size: 18px;}
+.dd-inner .item i{font: 400 9px/14px consolas;position:absolute;top:40px;right:14px;width:4px;height:14px; color: #bababa;}
+.dd-inner .item:hover{background:#888;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);
+}
+.dd-inner .item a:hover { height:64.4px; color:red; text-decoration:underline;}
+.bb{width:228px;height:2px;background:#c81623;position:absolute;top:49px;}
+.font-item1{
+	position:absolute;
+	left:240px;
+	top:0px; 
+	width:960px;
+	border:1px solid #999; 
+	border-left:none;
+	background:#f7f7f7;
+	display:none;min-height: 449px;
+	z-index: 100; 
+}
+.font-item1 .font-left{width:790px;float:left;padding:20px 0 0 20px;background:#f7f7f7;}
+.font-item1 .font-left .one:hover a{background:#c81623;}
+.font-item1 .font-left .one:hover i{background: #b1191a;}
+.font-item1 .font-left .two:hover a{background:#c81623;}
+.font-item1 .font-left .two:hover i{background: #b1191a;}
+.font-item1 .font-left .three:hover a{background:#c81623;}
+.font-item1 .font-left .three:hover i{background: #b1191a;}
+.font-item1 .font-left .four:hover a{background:#c81623;}
+.font-item1 .font-left .four:hover i{background: #b1191a;}
+.font-item1 .font-left .five:hover a{background:#c81623;}
+.font-item1 .font-left .five:hover i{background: #b1191a;}
+.font-item1 .font-left .sex:hover a{background:#c81623;}
+.font-item1 .font-left .sex:hover i{background: #b1191a;}
+.font-item1 .font-lefty{clear:both;float:left;padding:6px 3px 0px 20px;background:#f7f7f7;position:relative;}
+.font-item1 .font-lefty .fore1{width:100%;overflow:hidden;position:relative;}
+.font-item1 .font-lefty .fore1 dt{font-weight:700;width:54px;padding: 8px 30px 0 0;float:left;text-align:right;}
+.font-item1 .font-lefty .fore1 i{font: 400 9px/14px consolas;position:absolute;top:11px;left:64px;}
+.font-item1 .font-lefty dd{width:620px;float:left;}
+.font-item1 .font-lefty dd a{float:left;padding:0 8px;margin:10px 0;height:16px;line-height:16px;border-left:1px solid #e0e0e0;}
+.font-item1 .font-right{float:right;width:168px;overflow:hidden;margin:12px 20px 10px 0;}
+.font-item1 .font-right a{float:left;display:inline;margin:1px 0 -4px 1px;}
+.font-item1 .font-right a img{width:83px;height:35px;}
+.font-item1 .font-righty{margin-right:20px;width:168px;float:right;}
+.font-item:hover .font-item1{display:block;}
+.font-item:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-2:hover .font-item1{display:block;}
+.fore-2:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-3:hover .font-item1{display:block;}
+.fore-3:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-4:hover .font-item1{display:block;}
+.fore-4:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-5:hover .font-item1{display:block;}
+.fore-5:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-6:hover .font-item1{display:block;}
+.fore-6:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+.fore-7:hover .font-item1{display:block;}
+.fore-7:hover .item{background:rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#5f000000,endColorstr=#5f000000);}
+

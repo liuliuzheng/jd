@@ -34,13 +34,13 @@ class list{
         }         
     }  
     //加入购物车的方法
-    addCartFn(eve){
+    async addCartFn(eve){
         //console.log(this);
         // console.log(eve.target);
         //判断用户是否登录,如果能够获取到token,则表示登录,获取不到表示未登录
          let token=localStorage.getItem('token') 
          //跳转
-         if(!token)location.assign('./login.html?RrturnUrl=./list.html')
+         if(!token)location.assign('./login.html?ReturnUrl=./list.html')
          //assign是跳转的意思,从列表页面跳转到登录页面
 
          //判断是否点击的是a标签
@@ -52,18 +52,37 @@ class list{
             //  console.log(lisObj);
             // console.log(goodsId);
             let userId=localStorage.getItem('user_id')
+            // console.log(userId)
             //两个id必须都有才能发送请求
-            if(!userId||!goodsId)throw new Error('两个id存在问题,请打印...')
-         }
-        //商品id的获取或用户id的获取
-        // console.log(eve.target);
-         //如果用户登录,则加数据信息添加到购物车当中
-         axios.post( 'http://localhost:8888/cart/add' , { 
-            id:userId,goodsId
-           }).then(data=>{
-               console.log(data);
-           })
-     
+            if(!userId||!goodsId)throw new Error('两个id存在问题,请打印...');
+            axios.defaults.headers.common['authorization'] = token;
+            //必须设置内容的类型,默认是jso格式,server是处理不了
+            axios.defaults.headers[ 'Content-Type' ] = 'application/x-www-form-urlencoded' ;
+            //数据必须以原生的方式拼接好
+            let param=`id=${userId}&goodsId=${goodsId}`
+            //商品id的获取或用户id的获取
+            // console.log(eve.target);
+            //如果用户登录,则加数据信息添加到购物车当中
+            let {data,status}=await axios.post( 'http://localhost:8888/cart/add',param);
+            console.log(data); 
+            if(status==200){
+                // console.log(data);
+                if(data.code==1){//购买单成功
+                    layer.open({
+                        content:'加入购物车',
+                        btn:['去购物车结算','留在当前页面']
+                        ,yes:function(index,layero){
+                            //按钮[按钮一]的回调
+                            location.assign('./cart.html')
+                        }
+                        ,btn2:function(index,layero){
+                            //按钮[按钮二]的回调
+                            //return false开启该代码可禁止点击该按钮关闭
+                        }
+                    })
+                }
+            }
+        }
     }
 
     $(tag){
